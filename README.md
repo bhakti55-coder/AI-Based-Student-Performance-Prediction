@@ -2,12 +2,19 @@
 
 An end-to-end Machine Learning project that predicts a student's final GPA based on their academic habits, attendance, and support systems, complete with an interactive web interface.
 
+## 🚀 Live Application
+Test the model live here: [https://u2u-ai-based-student-performance.onrender.com/]
+
 ## Project Overview
 This project focuses on predicting student performance using artificial intelligence and machine learning techniques. 
 This project uses Exploratory Data Analysis (EDA) and a highly accurate **Linear Regression model** (95.32% R-squared accuracy) to identify key factors influencing student success. The analysis revealed that **Absences** heavily negatively correlate with GPA, while **Study Time** and **Parental Support** are the strongest positive indicators.
 This project leverages Machine Learning to predict student outcomes. After performing Exploratory Data Analysis (EDA) on a dataset of 2,392 records, a Linear Regression model was trained to achieve **95.32% accuracy**. The project includes a live web application built with Flask, allowing users to input student metrics and receive real-time GPA predictions.
 
 ## Key Features
+* **Predictive Analytics:** Uses a trained model to forecast student performance.
+* **Feature Engineering:** Analyzes key drivers like Study Time, Parental Support, and Absences.
+* **Interactive Web App:** A clean, user-friendly Flask interface for instant predictions.
+* **Serialized Model:** Uses `pickle` for efficient model deployment.
 * **Predictive Analytics:** Uses a trained model to forecast student performance.
 * **Feature Engineering:** Analyzes key drivers like Study Time, Parental Support, and Absences.
 * **Interactive Web App:** A clean, user-friendly Flask interface for instant predictions.
@@ -34,7 +41,7 @@ This project leverages Machine Learning to predict student outcomes. After perfo
 * **Backend Framework:** Flask
 * **Machine Learning:** Scikit-Learn (Linear Regression), Pandas, NumPy
 * **Frontend:** HTML/CSS
-* **Deployment:** Local Web Server
+* **Deployment:** Render (Cloud Hosting)
 
 ## Project Structure
 * `app.py`: Main Flask application server.
@@ -42,6 +49,7 @@ This project leverages Machine Learning to predict student outcomes. After perfo
 * `deployment/`: Contains the serialized model (`student_model.pkl`).
 * `src/`: Notebooks and scripts used for EDA and model training.
 * `data/`: The primary dataset.
+* `requirements.txt`: Dependencies for cloud deployment.
 
 ## How to Run
 1. **Clone the repository:**
