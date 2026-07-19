@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Student GPA Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; padding: 20px; }
+        .container { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1, h2 { text-align: center; color: #333; }
+        label { font-weight: bold; margin-top: 10px; display: block; font-size: 14px; color: #555;}
+        input { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;}
+        button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .result { text-align: center; padding: 15px; margin-top: 20px; background-color: #e8f4f8; border-radius: 5px; color: #02526e; border: 1px solid #bce0f0;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI GPA Predictor 🤖🎓</h1>
+        <p style="text-align: center; color: #666; font-size: 14px;">Adjust the metrics below to test the AI</p>
+        
+        <form action="/predict" method="post">
+            <label>Study Time Weekly (Hours):</label> 
+            <input type="number" step="0.1" name="StudyTimeWeekly" value="15.0" required>
+            
+            <label>Absences (0 - 30):</label> 
+            <input type="number" name="Absences" value="2" required>
+            
+            <label>Parental Support (0=None, 1=Low, 2=Med, 3=High, 4=Very High):</label> 
+            <input type="number" name="ParentalSupport" value="3" required>
+            
+            <label>Tutoring (0=No, 1=Yes):</label> 
+            <input type="number" name="Tutoring" value="1" required>
+
+            <!-- Background Demographics -->
+            <label>Age:</label> <input type="number" name="Age" value="17" required>
+            <label>Gender (0=Female, 1=Male):</label> <input type="number" name="Gender" value="1" required>
+            <label>Ethnicity (0-3):</label> <input type="number" name="Ethnicity" value="0" required>
+            <label>Parental Education (0-4):</label> <input type="number" name="ParentalEducation" value="2" required>
+            <label>Extracurricular (0=No, 1=Yes):</label> <input type="number" name="Extracurricular" value="1" required>
+            <label>Sports (0=No, 1=Yes):</label> <input type="number" name="Sports" value="0" required>
+            <label>Music (0=No, 1=Yes):</label> <input type="number" name="Music" value="1" required>
+            <label>Volunteering (0=No, 1=Yes):</label> <input type="number" name="Volunteering" value="0" required>
+            
+            <button type="submit">Predict Final GPA</button>
+        </form>
+
+        <!-- This block displays the result sent back from app.py -->
+        {% if prediction_text %}
+        <div class="result">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
